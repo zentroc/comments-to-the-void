@@ -1,36 +1,62 @@
+/* 
+ * Giscus Custom Theme für Publii Tattoo
+ * Datei: gattoo.css
+ */
+
 main {
-  /* Grundfarben für die Variablen */
+  /* Schriftarten aus deinem Publii-Theme */
+  --giscus-font-family: "Gantari", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  --giscus-font-family-mono: "Geist Mono", ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+
+  /* Farben & Kontraste */
+  --color-canvas-default: #ffffff;    /* Hintergrund Weiß */
+  --color-canvas-inset: #ffffff;      /* Eingabefeld Weiß */
+  --color-fg-default: #000000;        /* Text Schwarz */
+  --color-fg-muted: #666666;          /* Sekundärtext Grau */
+  --color-border-default: #dddddd;    /* Trennlinien */
+
+  /* Button-Variablen */
   --color-btn-primary-bg: #000000 !important;
   --color-btn-primary-text: #ffffff !important;
   --color-btn-primary-border: #000000 !important;
   --color-btn-primary-hover-bg: #333333 !important;
   --color-btn-primary-hover-border: #333333 !important;
   
-  /* Falls Giscus den "selected" oder "active" State anders färbt */
-  --color-btn-primary-selected-bg: #000000 !important;
+  /* Fokus-Farben (ehemals Blau) */
+  --color-accent-fg: #000000;
+  --color-accent-emphasis: #000000;
 }
 
-/* Hardcore-Überschreibung für den Button-Look */
+/* --- TATTOO THEME FINETUNING --- */
+
+/* Der schwarze Button */
 main .btn-primary {
     background-color: #000000 !important;
     color: #ffffff !important;
     border: 1px solid #000000 !important;
-    border-radius: 0px !important;    /* Eckig passend zum Tattoo-Theme */
+    border-radius: 0px !important;       /* Absolut eckig */
     text-transform: uppercase !important;
-    font-weight: bold !important;
-    padding: 12px 24px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.05em;
+    padding: 10px 24px !important;
+    transition: background-color 0.2s ease;
 }
 
-/* Hover-Effekt: Etwas heller beim Drüberfahren */
-main .btn-primary:hover {
-    background-color: #333333 !important;
-    border-color: #333333 !important;
-    color: #ffffff !important;
-}
-
-/* Der schmale Fokus-Rahmen beim Klicken (Schwarz statt Blau) */
+/* Fokus-Rahmen (Hauchdünn & Schwarz) */
 main .form-control:focus {
     border-color: #000000 !important;
     box-shadow: 0 0 0 1px #000000 !important; 
     outline: none !important;
+}
+
+/* Eingabefelder eckig machen */
+main .form-control, 
+main .gsc-comment-box-tabs {
+    border-radius: 0px !important;
+}
+
+/* Schriftgröße anpassen, damit es harmonischer wirkt */
+main .gsc-comment-content {
+    font-size: 16px;
+    line-height: 1.6;
 }
