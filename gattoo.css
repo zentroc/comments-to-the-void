@@ -1,0 +1,35 @@
+main {
+  /* Text & Hintergrund */
+  --color-fg-default: #1F2328;          /* Fast Schwarz für Text */
+  --color-canvas-default: #ffffff;      /* Rein Weißer Hintergrund */
+  --color-border-default: #eeeeee;      /* Sehr dezente Trennlinien */
+  
+  /* Buttons - Weg vom Grün, hin zum Mono-Look */
+  --color-btn-primary-bg: #000000;      /* Schwarzer Button */
+  --color-btn-primary-text: #ffffff;    /* Weißer Text auf Button */
+  --color-btn-primary-border: #000000;
+  --color-btn-primary-hover-bg: #333333; /* Dunkelgrau beim Drüberfahren */
+  --color-btn-primary-hover-border: #333333;
+  --color-btn-primary-disabled-bg: #cccccc;
+  
+  /* Eingabefelder & Fokus (Das "Blaue" entfernen) */
+  --color-accent-fg: #000000;           /* Akzente in Schwarz statt Blau */
+  --color-accent-emphasis: #000000;     /* Fokus-Rahmen in Schwarz */
+  --color-canvas-inset: #fcfcfc;        /* Ganz leichtes Grau für das Textfeld */
+}
+
+/* Entfernt den blauen Standard-Browser-Rahmen beim Klicken */
+main .form-control:focus,
+main .btn-primary:focus {
+    border-color: #000000 !important;
+    box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1) !important;
+    outline: none !important;
+}
+
+/* Macht den Button eckiger (passend zum Mono-Style) */
+main .btn-primary {
+    border-radius: 0px !important;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
