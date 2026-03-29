@@ -1,47 +1,36 @@
 main {
-  /* Hintergrund & Text passend zum Tattoo-Theme */
-  --color-canvas-default: #ffffff;
-  --color-canvas-inset: #ffffff;      /* Eingabefeld auch rein weiß */
-  --color-fg-default: #000000;        /* Text tiefschwarz */
-  --color-fg-muted: #666666;
-  --color-border-default: #dddddd;    /* Dezente Trennlinien */
-
-  /* DER BUTTON: Schwarz mit weißer Schrift */
-  --color-btn-primary-bg: #000000;    /* Hintergrund Schwarz */
-  --color-btn-primary-text: #ffffff;  /* Schrift Weiß */
-  --color-btn-primary-border: #000000;
+  /* Grundfarben für die Variablen */
+  --color-btn-primary-bg: #000000 !important;
+  --color-btn-primary-text: #ffffff !important;
+  --color-btn-primary-border: #000000 !important;
+  --color-btn-primary-hover-bg: #333333 !important;
+  --color-btn-primary-hover-border: #333333 !important;
   
-  /* Hover-Effekt: Invertiert oder Dunkelgrau */
-  --color-btn-primary-hover-bg: #333333; 
-  --color-btn-primary-hover-border: #333333;
-  
-  /* Akzentfarbe für den Fokus (ehemals Blau) */
-  --color-accent-fg: #000000;
-  --color-accent-emphasis: #000000;
+  /* Falls Giscus den "selected" oder "active" State anders färbt */
+  --color-btn-primary-selected-bg: #000000 !important;
 }
 
-/* --- FINETUNING FÜR DEN LOOK --- */
+/* Hardcore-Überschreibung für den Button-Look */
+main .btn-primary {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border: 1px solid #000000 !important;
+    border-radius: 0px !important;    /* Eckig passend zum Tattoo-Theme */
+    text-transform: uppercase !important;
+    font-weight: bold !important;
+    padding: 12px 24px !important;
+}
 
-/* 1. Den blauen Rahmen durch einen hauchdünnen schwarzen ersetzen */
-main .form-control:focus,
-main .btn-primary:focus {
+/* Hover-Effekt: Etwas heller beim Drüberfahren */
+main .btn-primary:hover {
+    background-color: #333333 !important;
+    border-color: #333333 !important;
+    color: #ffffff !important;
+}
+
+/* Der schmale Fokus-Rahmen beim Klicken (Schwarz statt Blau) */
+main .form-control:focus {
     border-color: #000000 !important;
-    /* Hier ist der "dünne" Effekt: nur 1px Schatten ohne Weichzeichnung */
     box-shadow: 0 0 0 1px #000000 !important; 
     outline: none !important;
-}
-
-/* 2. Button-Styling: Eckig & Markant passend zum Tattoo-Theme */
-main .btn-primary {
-    border-radius: 0px !important;    /* Keine Rundungen */
-    text-transform: uppercase;        /* Großbuchstaben für mehr "Wumms" */
-    font-weight: 700;                 /* Fett */
-    padding: 10px 20px !important;    /* Etwas mehr Platz im Button */
-    transition: all 0.2s ease;
-}
-
-/* 3. Eingabefelder eckig machen */
-main .form-control {
-    border-radius: 0px !important;
-    border: 1px solid #dddddd !important;
 }
